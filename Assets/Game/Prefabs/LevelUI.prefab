@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4820750661445993653}
+  - component: {fileID: 2345776968242691302}
   m_Layer: 5
   m_Name: LevelUI
   m_TagString: Untagged
@@ -32,6 +33,21 @@ Transform:
   - {fileID: 9149571955006605237}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2345776968242691302
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 102569299544183754}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a46eb57aabe84f29a55d9fb64a0d38c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ClockHand: {fileID: 6146816936263444748}
+  AgeCounter: {fileID: 273938278129986954}
+  ClockHandRotationSpeed: 1
 --- !u!1 &748475350878585982
 GameObject:
   m_ObjectHideFlags: 0
@@ -561,14 +577,14 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5367990469426217226}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0.01745245, y: 0, z: 0, w: 0.99984777}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8007456456478050988}
   m_Father: {fileID: 3350075933069586466}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -2, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0.072, y: -0.161}
@@ -745,6 +761,6 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -323.43988, y: 237.01251}
+  m_AnchoredPosition: {x: -323.43988, y: 183.2}
   m_SizeDelta: {x: 238.32007, y: 86.274765}
   m_Pivot: {x: 0.5, y: 0.5}
