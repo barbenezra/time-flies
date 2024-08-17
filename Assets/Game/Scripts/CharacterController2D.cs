@@ -4,6 +4,7 @@ using UnityEngine.Events;
 
 public class CharacterController2D : MonoBehaviour
 {
+	[SerializeField] private float m_runSpeed = 40f;							// Amount of force added when the player jumps.
 	[SerializeField] private float m_JumpForce = 400f;							// Amount of force added when the player jumps.
 	[SerializeField] private float m_DashForce = 400f;							// Amount of force added when the player dashes.
 	[SerializeField] private float m_dashCooldown = 0.5f;
@@ -56,6 +57,8 @@ public class CharacterController2D : MonoBehaviour
 
 	public void Move(float move, bool crouch, bool jump, bool dash)
 	{
+		move *= m_runSpeed;
+		
 		// If crouching, check to see if the character can stand up
 		if (!crouch)
 		{
@@ -154,5 +157,8 @@ public class CharacterController2D : MonoBehaviour
 	{
 		m_GroundCheck = controller.m_GroundCheck;
 		m_CeilingCheck = controller.m_CeilingCheck;
+		m_DashForce = controller.m_DashForce;
+		m_JumpForce = controller.m_JumpForce;
+		m_runSpeed = controller.m_runSpeed;
 	}
 }

@@ -68,7 +68,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 2854970116948882321}
-  runSpeed: 40
 --- !u!50 &7772709819710149687
 Rigidbody2D:
   serializedVersion: 4
@@ -108,6 +107,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1295dd66fa9942e6b71cca865345b5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_runSpeed: 40
   m_JumpForce: 1000
   m_DashForce: 150
   m_dashCooldown: 1
@@ -191,6 +191,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BabyState
+      objectReference: {fileID: 0}
+    - target: {fileID: 6818215976503016274, guid: e0a7838df14c2414a98c781b4af6aaee,
+        type: 3}
+      propertyPath: m_runSpeed
+      value: 60
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -466,6 +471,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8765276538932147836, guid: 9660ea30f38ef644f9394a2dba0b456a,
+        type: 3}
+      propertyPath: m_runSpeed
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 8938959068288671978, guid: 9660ea30f38ef644f9394a2dba0b456a,
         type: 3}
