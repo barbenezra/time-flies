@@ -482,12 +482,12 @@ PrefabInstance:
     - target: {fileID: 2854970116948882321, guid: 4b2adbb6d11502840bf0770212f6feeb,
         type: 3}
       propertyPath: m_JumpForce
-      value: 2000
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 4199849485324226689, guid: 4b2adbb6d11502840bf0770212f6feeb,
         type: 3}
       propertyPath: runSpeed
-      value: 60
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 5072280318837445206, guid: 4b2adbb6d11502840bf0770212f6feeb,
         type: 3}
@@ -547,7 +547,7 @@ PrefabInstance:
     - target: {fileID: 7772709819710149687, guid: 4b2adbb6d11502840bf0770212f6feeb,
         type: 3}
       propertyPath: m_GravityScale
-      value: 10
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1437,8 +1437,8 @@ Transform:
   m_GameObject: {fileID: 1181451981}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -16.062904, y: -21.296007, z: 0.46943447}
-  m_LocalScale: {x: 5, y: 5, z: 5}
+  m_LocalPosition: {x: -16.063, y: -21.296007, z: 0.46943447}
+  m_LocalScale: {x: 60.618748, y: 5, z: 5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 396109678}
