@@ -2,14 +2,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Sirenix.Utilities;
+using UnityEditor;
 using UnityEngine;
 using Random = System.Random;
-#if UNITY_EDITOR
-using UnityEditor;
 
-#endif
-
-namespace Helpers {
+namespace Game.Scripts.Helpers {
     internal static class Extensions {
         public static T Random<T>(this IEnumerable<T> list) {
             Random random = new Random();
