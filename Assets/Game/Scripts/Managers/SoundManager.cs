@@ -9,7 +9,7 @@ using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
 
-namespace Managers {
+namespace Game.Scripts.Managers {
     [Serializable]
     public struct SoundConfiguration {
         public string Name;

@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8031749232420984310}
-  - component: {fileID: 1142793435496284532}
+  - component: {fileID: 2843614122803294275}
   m_Layer: 0
   m_Name: GroundCheck
   m_TagString: Untagged
@@ -32,7 +32,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 5072280318837445206}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &1142793435496284532
+--- !u!61 &2843614122803294275
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -75,7 +75,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.5, y: 0.2}
+  m_Size: {x: 3, y: 0.25}
   m_EdgeRadius: 0
 --- !u!1 &5590859018547592738
 GameObject:
@@ -121,6 +121,7 @@ GameObject:
   - component: {fileID: 737224107367118884}
   - component: {fileID: 7301941148954650576}
   - component: {fileID: 6636272634098557727}
+  - component: {fileID: 3301687267954618072}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -160,7 +161,7 @@ MonoBehaviour:
   m_JumpForce: 400
   m_CrouchSpeed: 0.36
   m_MovementSmoothing: 0.05
-  m_AirControl: 0
+  m_AirControl: 1
   m_WhatIsGround:
     serializedVersion: 2
     m_Bits: 64
@@ -239,8 +240,8 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_AngularDrag: 1
+  m_GravityScale: 1.5
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -248,10 +249,10 @@ Rigidbody2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
+  m_CollisionDetection: 1
+  m_Constraints: 4
 --- !u!114 &6636272634098557727
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -266,3 +267,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 6244697360402352224}
   runSpeed: 40
+--- !u!114 &3301687267954618072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6392301377523710490}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ece140ee36ccd4acb84f570c8b7b4c5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
