@@ -134,6 +134,7 @@ public class CharacterController2D : MonoBehaviour
 			m_Rigidbody2D.AddForce(new Vector2(direction * m_DashForce, 0f), ForceMode2D.Impulse);
 			OnDashEvent.Invoke();
 			dashTime = m_dashCooldown; 
+			SoundManager.Instance.Play("Dash");
 		}
 
 		if (dashTime >= 0)

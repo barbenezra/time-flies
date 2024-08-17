@@ -8,7 +8,7 @@ using UnityEngine.Events;
 
 public class PlayerState : MonoBehaviour
 {
-    IState currentState;
+    IState currentState = new BabyState();
 
     [SerializeField] CharacterController2D BabyController;
     [SerializeField] CharacterController2D ChildController;
@@ -37,16 +37,16 @@ public class PlayerState : MonoBehaviour
             _ => new BabyState()
         };
 
-        if (newState != currentState)
+        if (newState.GetType() != currentState.GetType())
         {
             ChangeState(newState);
         }
     }
 
-    private void Start()
-    {
-        ChangeState(new BabyState());
-    }
+    // private void Start()
+    // {
+    //     ChangeState(new BabyState());
+    // }
 
     void Update()
     {
@@ -103,6 +103,7 @@ public class PlayerState : MonoBehaviour
 
     private void ChangeState(IState newState)
     {
+        SoundManager.Instance.Play("Grow");
         SetController(newState);
 
         currentState?.OnExit(this);
