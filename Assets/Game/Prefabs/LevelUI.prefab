@@ -47,7 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ClockHand: {fileID: 6146816936263444748}
   AgeCounter: {fileID: 273938278129986954}
-  ClockHandRotationSpeed: 1
+  DegreesPerDay: 1
 --- !u!1 &748475350878585982
 GameObject:
   m_ObjectHideFlags: 0
@@ -578,7 +578,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5367990469426217226}
   m_LocalRotation: {x: -0.01745245, y: 0, z: 0, w: 0.99984777}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -759,8 +759,8 @@ RectTransform:
   - {fileID: 6178372841120398242}
   m_Father: {fileID: 9149571955006605237}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -323.43988, y: 183.2}
-  m_SizeDelta: {x: 238.32007, y: 86.274765}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 10, y: -51.5}
+  m_SizeDelta: {x: 238.32007, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}

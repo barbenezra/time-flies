@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7416185365791031431}
   - component: {fileID: 4423986614787918979}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: SuitcaseObstacle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -65,7 +65,7 @@ GameObject:
   - component: {fileID: 7921680434023681800}
   - component: {fileID: 783583931359875713}
   - component: {fileID: 1018635436934707659}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: Suitcase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
