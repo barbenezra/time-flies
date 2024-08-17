@@ -26,7 +26,7 @@ namespace Game.Scripts.Managers
 
         [Required] [TitleGroup("General")] public float CurrentDay = 0;
 
-        [TitleGroup("General"), Range(1, 365)] public float DaysPerSecond = 1;
+        [TitleGroup("General"), Range(1, 365)] public float DaysPerSecond = 100;
 
         public UnityEvent<int> OnAgeChanged = new UnityEvent<int>();
 

@@ -652,6 +652,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelUI
       objectReference: {fileID: 0}
+    - target: {fileID: 2890071224151194649, guid: 49a9d50d6453b46a68c09165c842d405,
+        type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 394213458}
+    - target: {fileID: 2890071224151194649, guid: 49a9d50d6453b46a68c09165c842d405,
+        type: 3}
+      propertyPath: m_RenderMode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4820750661445993653, guid: 49a9d50d6453b46a68c09165c842d405,
         type: 3}
       propertyPath: m_LocalPosition.x
