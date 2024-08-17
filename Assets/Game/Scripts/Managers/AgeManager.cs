@@ -28,15 +28,15 @@ namespace Game.Scripts.Managers
 
         [TitleGroup("General"), Range(1, 365)] public float DaysPerSecond = 100;
 
-        public UnityEvent<int> OnAgeChanged = new UnityEvent<int>();
+        public Action<int> OnAgeChanged;
 
-        private float _daysPerYear = 365;
+        private float daysPerYear = 365;
 
         private void Update()
         {
-            var oldAge = Mathf.FloorToInt(CurrentDay / _daysPerYear);
+            var oldAge = Mathf.FloorToInt(CurrentDay / daysPerYear);
             CurrentDay += DaysPerSecond * Time.deltaTime;
-            var newAge = Mathf.FloorToInt(CurrentDay / _daysPerYear);
+            var newAge = Mathf.FloorToInt(CurrentDay / daysPerYear);
 
             if (newAge > oldAge)
             {

@@ -35,22 +35,13 @@ public class PlayerMovement : MonoBehaviour
         {
             crouch = false;
         }
-
-        if (Input.GetKey(KeyCode.P))
-        {
-            GetComponent<PlayerState>().ChangeState(new AdultState());
-        }
-        
-        if (Input.GetKey(KeyCode.X))
-        {
-            GetComponent<PlayerState>().ChangeState(new BabyState());
-        }
     }
 
     void FixedUpdate()
     {
         // Move our character
         controller.Move(horizontalMove * Time.fixedDeltaTime, crouch, jump, dash);
+
         jump = false;
         dash = false;
     }

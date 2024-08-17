@@ -170,7 +170,7 @@ Transform:
   m_GameObject: {fileID: 6483037800705241356}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -3.26, z: 0}
+  m_LocalPosition: {x: 0, y: -3.13, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -361,7 +361,7 @@ MonoBehaviour:
   m_AirControl: 0
   m_WhatIsGround:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   m_GroundCheck: {fileID: 3181013206399187111}
   m_CeilingCheck: {fileID: 6452915632933200976}
   m_CrouchDisableCollider: {fileID: 0}

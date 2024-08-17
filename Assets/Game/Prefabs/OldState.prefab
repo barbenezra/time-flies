@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 7053970062528452795}
   - component: {fileID: 1856500153469235793}
   m_Layer: 0
-  m_Name: GroundCheck
+  m_Name: CeilingCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -260,8 +260,8 @@ Transform:
   m_Children:
   - {fileID: 1061163955259607968}
   - {fileID: 7972878596389602764}
-  - {fileID: 7053970062528452795}
   - {fileID: 7525251660059449509}
+  - {fileID: 7053970062528452795}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6081664645960488750
@@ -284,9 +284,9 @@ MonoBehaviour:
   m_AirControl: 0
   m_WhatIsGround:
     serializedVersion: 2
-    m_Bits: 0
-  m_GroundCheck: {fileID: 7053970062528452795}
-  m_CeilingCheck: {fileID: 7525251660059449509}
+    m_Bits: 64
+  m_GroundCheck: {fileID: 7525251660059449509}
+  m_CeilingCheck: {fileID: 7053970062528452795}
   m_CrouchDisableCollider: {fileID: 0}
   OnDashEvent:
     m_PersistentCalls:
@@ -308,7 +308,7 @@ GameObject:
   - component: {fileID: 7525251660059449509}
   - component: {fileID: 3478923502570642670}
   m_Layer: 0
-  m_Name: CeilingCheck
+  m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -16,7 +16,7 @@ public class CharacterController2D : MonoBehaviour
 	[SerializeField] private Collider2D m_CrouchDisableCollider;				// A collider that will be disabled when crouching
 
 	private float dashTime = 0;
-	const float k_GroundedRadius = .2f; // Radius of the overlap circle to determine if grounded
+	const float k_GroundedRadius = .5f; // Radius of the overlap circle to determine if grounded
 	private bool m_Grounded;            // Whether or not the player is grounded.
 	const float k_CeilingRadius = .2f; // Radius of the overlap circle to determine if the player can stand up
 	private Rigidbody2D m_Rigidbody2D;
@@ -128,9 +128,9 @@ public class CharacterController2D : MonoBehaviour
 		if (dash && dashTime <= 0)
 		{
 			float direction = m_FacingRight ? 1 : -1;
-			m_Rigidbody2D.AddForce(new Vector2(direction * m_DashForce, 0f));
+			m_Rigidbody2D.AddForce(new Vector2(direction * m_DashForce, 0f), ForceMode2D.Impulse);
 			OnDashEvent.Invoke();
-			dashTime = m_dashCooldown;
+			dashTime = m_dashCooldown; 
 		}
 
 		if (dashTime >= 0)
@@ -148,5 +148,11 @@ public class CharacterController2D : MonoBehaviour
 		Vector3 theScale = transform.localScale;
 		theScale.x *= -1;
 		transform.localScale = theScale;
+	}
+
+	public void SetController(CharacterController2D controller)
+	{
+		m_GroundCheck = controller.m_GroundCheck;
+		m_CeilingCheck = controller.m_CeilingCheck;
 	}
 }

@@ -87,8 +87,6 @@ GameObject:
   m_Component:
   - component: {fileID: 697148532753324531}
   - component: {fileID: 6818215976503016274}
-  - component: {fileID: 1026416578055110021}
-  - component: {fileID: 2443610998383287365}
   m_Layer: 0
   m_Name: BabyState
   m_TagString: Untagged
@@ -129,13 +127,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_JumpForce: 400
   m_DashForce: 400
-  m_dashCooldown: 0.5
+  m_dashCooldown: 1
   m_CrouchSpeed: 0.36
   m_MovementSmoothing: 0.05
   m_AirControl: 0
   m_WhatIsGround:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   m_GroundCheck: {fileID: 2942701388581247171}
   m_CeilingCheck: {fileID: 2520656396116089866}
   m_CrouchDisableCollider: {fileID: 0}
@@ -148,47 +146,6 @@ MonoBehaviour:
   OnCrouchEvent:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &1026416578055110021
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2354415840548704750}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01662887d17b7402d9f4a098d757e245, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  controller: {fileID: 0}
-  runSpeed: 40
---- !u!50 &2443610998383287365
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2354415840548704750}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!1 &4255270381199036977
 GameObject:
   m_ObjectHideFlags: 0
@@ -282,7 +239,7 @@ Transform:
   m_GameObject: {fileID: 5533800460611864651}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -2.16, z: 0}
+  m_LocalPosition: {x: 0, y: -2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
