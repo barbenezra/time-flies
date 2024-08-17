@@ -5,22 +5,12 @@ using Game.Scripts.Helpers;
 using Sirenix.OdinInspector;
 using Sirenix.Utilities;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
+
 
 namespace Game.Scripts.Managers
 {
-    [Serializable]
-    public struct PhaseConfiguration
-    {
-        public string Name;
-
-        [Range(0, 120)] public int Age;
-
-        [Range(0, 1)] public float Speed;
-
-        [Range(0, 1)] public float JumpHeight;
-    }
-
     public class AgeManager : Singleton<AgeManager>, IDestroyable
     {
         protected AgeManager()
@@ -33,22 +23,25 @@ namespace Game.Scripts.Managers
         {
         }
 
-        [Required] [TitleGroup("General")] public int CurrentDay = 0;
 
-        [TitleGroup("General"), Range(1, 365)] public int DaysPerSecond = 1;
+        [Required] [TitleGroup("General")] public float CurrentDay = 0;
 
-        [BoxGroup("Phases")] public List<PhaseConfiguration> Phases = new List<PhaseConfiguration>();
+        [TitleGroup("General"), Range(1, 365)] public float DaysPerSecond = 1;
 
-        [TitleGroup("General"), ShowInInspector]
-        public PhaseConfiguration CurrentPhase => Phases
-            .OrderBy(phase => phase.Age)
-            .LastOrDefault(phase => phase.Age * 365 <= CurrentDay);
+        public UnityEvent<int> OnAgeChanged = new UnityEvent<int>();
 
-        private void Start()
+        private float _daysPerYear = 365;
+
+        private void Update()
         {
-            InvokeRepeating(nameof(AddDays), 1f, 1f);
-        }
+            var oldAge = Mathf.FloorToInt(CurrentDay / _daysPerYear);
+            CurrentDay += DaysPerSecond * Time.deltaTime;
+            var newAge = Mathf.FloorToInt(CurrentDay / _daysPerYear);
 
-        private void AddDays() => CurrentDay += DaysPerSecond;
+            if (newAge > oldAge)
+            {
+                OnAgeChanged.Invoke(newAge);
+            }
+        }
     }
 }
