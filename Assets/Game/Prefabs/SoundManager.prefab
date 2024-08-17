@@ -54,12 +54,28 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   AudioMixer: {fileID: 24100000, guid: 9854a1ee621db40caa3c21758272d3f2, type: 2}
-  PlayDefaultOnStart: 0
-  Backdrops: []
+  PlayDefaultOnStart: 1
+  Backdrops:
+  - Name: Default
+    Clip: {fileID: 8300000, guid: 022c73fa8f05341eab3f2ab91902e041, type: 3}
+    Group: {fileID: -1219698277792983489, guid: 9854a1ee621db40caa3c21758272d3f2,
+      type: 2}
+    FadeBackdrop: 0
+    PlayInOrder: 0
   NumberOfSources: 1
   Sounds:
   - Name: Jump
-    Clip: {fileID: 8300000, guid: 78c0b14e06219469ebddf472b4b45a02, type: 3}
-    Group: {fileID: 0}
-    FadeBackdrop: 0
+    Clip: {fileID: 8300000, guid: 7d5b6dabcb9754c2bbe6a2ee63d53048, type: 3}
+    Group: {fileID: 6500369174016938505, guid: 9854a1ee621db40caa3c21758272d3f2, type: 2}
+    FadeBackdrop: 1
+    PlayInOrder: 0
+  - Name: Dash
+    Clip: {fileID: 8300000, guid: 5f7fe181afa484f8086ee6aa51b12783, type: 3}
+    Group: {fileID: 6500369174016938505, guid: 9854a1ee621db40caa3c21758272d3f2, type: 2}
+    FadeBackdrop: 1
+    PlayInOrder: 0
+  - Name: Grow
+    Clip: {fileID: 8300000, guid: 84854b1373ca94595a9aecad29be3377, type: 3}
+    Group: {fileID: 6500369174016938505, guid: 9854a1ee621db40caa3c21758272d3f2, type: 2}
+    FadeBackdrop: 1
     PlayInOrder: 0
