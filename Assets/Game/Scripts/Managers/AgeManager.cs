@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using DG.Tweening;
 using Game.Scripts.Helpers;
 using Sirenix.OdinInspector;
 using Sirenix.Utilities;
@@ -42,6 +43,13 @@ namespace Game.Scripts.Managers
             {
                 OnAgeChanged.Invoke(newAge);
             }
+        }
+            
+        public void SpeedUp(float daysPerSecond, float animationDurationInSeconds)
+        {
+            DOTween
+                .To(() => DaysPerSecond, x => DaysPerSecond = x, daysPerSecond, animationDurationInSeconds)
+                .From(true);
         }
     }
 }
