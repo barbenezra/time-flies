@@ -79,3 +79,15 @@ MonoBehaviour:
     Group: {fileID: 6500369174016938505, guid: 9854a1ee621db40caa3c21758272d3f2, type: 2}
     FadeBackdrop: 1
     PlayInOrder: 0
+  - Name: Eh
+    Clip: {fileID: 8300000, guid: 4d624bb1805944bf49bbe9b1e4572079, type: 3}
+    Group: {fileID: -3210895976114468243, guid: 9854a1ee621db40caa3c21758272d3f2,
+      type: 2}
+    FadeBackdrop: 1
+    PlayInOrder: 0
+  - Name: Click
+    Clip: {fileID: 8300000, guid: 0788c13ec558140b48f86aa4e86273b2, type: 3}
+    Group: {fileID: -3210895976114468243, guid: 9854a1ee621db40caa3c21758272d3f2,
+      type: 2}
+    FadeBackdrop: 1
+    PlayInOrder: 0
