@@ -1,3 +1,4 @@
+using Managers;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -21,24 +22,13 @@ public class CharacterController2D : MonoBehaviour
 
 	[Header("Events")]
 	[Space]
-
-	public UnityEvent OnLandEvent;
-
-	[System.Serializable]
-	public class BoolEvent : UnityEvent<bool> { }
-
-	public BoolEvent OnCrouchEvent;
+	public UnityEvent OnLandEvent = new UnityEvent();
+	public UnityEvent<bool> OnCrouchEvent = new UnityEvent<bool>();
 	private bool m_wasCrouching = false;
 
 	private void Awake()
 	{
 		m_Rigidbody2D = GetComponent<Rigidbody2D>();
-
-		if (OnLandEvent == null)
-			OnLandEvent = new UnityEvent();
-
-		if (OnCrouchEvent == null)
-			OnCrouchEvent = new BoolEvent();
 	}
 
 	private void FixedUpdate()
@@ -128,6 +118,7 @@ public class CharacterController2D : MonoBehaviour
 			// Add a vertical force to the player.
 			m_Grounded = false;
 			m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
+			SoundManager.Instance.Play("Jump");
 		}
 	}
 	
