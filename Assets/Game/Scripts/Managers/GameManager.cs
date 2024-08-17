@@ -65,7 +65,12 @@ public class GameManager : Singleton<GameManager>, IDestroyable
 
     public void MainMenu()
     {
-        SceneLoader.Instance.Load(SceneEnum.MainMenu);
+        AsyncOperation restartOperation = SceneManager.LoadSceneAsync(SceneEnum.MainMenu.ToString());
+
+        restartOperation.completed += operation => {
+            isGamePaused = false;
+            Time.timeScale = 1f;
+        };
     }
 
     public void QuitGame()
