@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Game/Animations/BabyRun.anim.meta
 guid: 3cf80ef9388b22d4b9b3dd1bcd647898
 NativeFormatImporter:
+========
+guid: fad9aa54ab3335844b5a35b9eb6ae286
+DefaultImporter:
+>>>>>>>> origin/main:Packages/com.singularitygroup.hotreload/Runtime/Demo/Scenes/HotReloadBurstDemo.unity.meta
   externalObjects: {}
   mainObjectFileID: 7400000
   userData: 

@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Game/Animations/AdultRun.anim.meta
 guid: f577e13bca47e6242a70d99f1846e36a
 NativeFormatImporter:
+========
+guid: ae744488364b34fcf8c80218eadc721c
+DefaultImporter:
+>>>>>>>> origin/main:Packages/com.singularitygroup.hotreload/Runtime/Demo/Scenes/HotReloadBasicDemo.unity.meta
   externalObjects: {}
   mainObjectFileID: 7400000
   userData: 

@@ -149,7 +149,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 211525698573123943}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b1295dd66fa9942e6b71cca865345b5d, type: 3}
   m_Name: 
@@ -176,6 +176,11 @@ MonoBehaviour:
   OnCrouchEvent:
     m_PersistentCalls:
       m_Calls: []
+  OnDeathEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  DashTimeSpeedUp: 300
+  JumpTimeSpeedUp: 200
 --- !u!1 &5344315601015589182
 GameObject:
   m_ObjectHideFlags: 0
@@ -185,7 +190,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5153156869391846928}
-  - component: {fileID: 2545866728330609696}
+  - component: {fileID: 3340472380766732221}
   m_Layer: 0
   m_Name: Body
   m_TagString: Untagged
@@ -208,7 +213,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 3827434746806569961}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!70 &2545866728330609696
+--- !u!70 &3340472380766732221
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -240,8 +245,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.102488995, y: 0.11713028}
-  m_Size: {x: 3.691801, y: 8.027819}
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 3.11, y: 8.23}
   m_Direction: 0
 --- !u!1 &6448734424765731707
 GameObject:

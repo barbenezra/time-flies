@@ -32,6 +32,8 @@ namespace Game.Scripts.Managers
         public Action<int> OnAgeChanged;
 
         private float daysPerYear = 365;
+        
+        private Tweener m_CurrentAgingTweener;
 
         private void Update()
         {
@@ -47,9 +49,11 @@ namespace Game.Scripts.Managers
             
         public void SpeedUp(float daysPerSecond, float animationDurationInSeconds)
         {
-            DOTween
+            if (m_CurrentAgingTweener == null || m_CurrentAgingTweener.IsPlaying()) return;
+            m_CurrentAgingTweener = DOTween
                 .To(() => DaysPerSecond, x => DaysPerSecond = x, daysPerSecond, animationDurationInSeconds)
                 .From(true);
+            SoundManager.Instance.Play("Ticking");
         }
     }
 }

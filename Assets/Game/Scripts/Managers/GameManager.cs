@@ -1,7 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using Game.Scripts;
 using Game.Scripts.Helpers;
+using Game.Scripts.Managers;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
@@ -12,11 +11,12 @@ public class GameManager : Singleton<GameManager>, IDestroyable
     public UnityEvent OnUnpauseGame = new UnityEvent();
 
     private bool isGamePaused;
-    
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
+            SoundManager.Instance.Play("Click");
             if (isGamePaused)
             {
                 UnpauseGame();
@@ -50,14 +50,15 @@ public class GameManager : Singleton<GameManager>, IDestroyable
 
     public void NewGame()
     {
-        SceneLoader.Instance.Load(SceneEnum.Level1);
+        SceneLoader.Instance.Load("Level1");
     }
 
     public void ResetGame()
     {
         AsyncOperation restartOperation = SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex);
 
-        restartOperation.completed += operation => {
+        restartOperation.completed += operation =>
+        {
             isGamePaused = false;
             Time.timeScale = 1f;
         };
@@ -65,13 +66,29 @@ public class GameManager : Singleton<GameManager>, IDestroyable
 
     public void MainMenu()
     {
-        AsyncOperation restartOperation = SceneManager.LoadSceneAsync(SceneEnum.MainMenu.ToString());
+        AsyncOperation restartOperation = SceneManager.LoadSceneAsync("MainMenu");
 
-        restartOperation.completed += operation => {
+        restartOperation.completed += operation =>
+        {
             isGamePaused = false;
             Time.timeScale = 1f;
         };
     }
+
+    public void NextLevel()
+    {
+        string currentLevel = SceneManager.GetActiveScene().name;
+
+        string nextLevel = currentLevel switch
+        {
+            "Level1" => "Level2",
+            "Level2" => "Level3",
+            _ => "MainMenu"
+        };
+
+        AsyncOperation restartOperation = SceneManager.LoadSceneAsync(nextLevel);
+    }
+
 
     public void QuitGame()
     {

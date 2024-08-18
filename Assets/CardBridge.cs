@@ -12,22 +12,22 @@ public class CardBridge : MonoBehaviour
 
     void Start()
     {
-        // Get the Rigidbody2D component
+     
         rb = GetComponent<Rigidbody2D>();
     }
 
     void FixedUpdate()
     {
-        // Move the platform in the current direction
+      
         rb.velocity = direction * speed;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        // Check if the platform collided with an object on the floor layer
+    
         if (collision.gameObject.layer == LayerMask.NameToLayer("Ground"))
         {
-            // Reverse the direction when hitting a floor object
+         
             direction *= -1;
         }
     }
