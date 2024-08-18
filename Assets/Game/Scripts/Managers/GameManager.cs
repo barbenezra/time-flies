@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Game.Scripts;
 using Game.Scripts.Helpers;
+using Game.Scripts.Managers;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
@@ -17,6 +18,7 @@ public class GameManager : Singleton<GameManager>, IDestroyable
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
+            SoundManager.Instance.Play("Click");
             if (isGamePaused)
             {
                 UnpauseGame();

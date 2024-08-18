@@ -63,6 +63,7 @@ AudioMixerController:
   m_MasterGroup: {fileID: 24300002}
   m_Snapshots:
   - {fileID: 24500006}
+  - {fileID: 3867200341498898880}
   m_StartSnapshot: {fileID: 24500006}
   m_SuspendThreshold: -80
   m_EnableSuspend: 1
@@ -119,7 +120,7 @@ AudioMixerSnapshotController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Snapshot
+  m_Name: Default
   m_AudioMixer: {fileID: 24100000}
   m_SnapshotID: 0f9362b08d531486698c65a33c8bbcde
   m_FloatValues:
@@ -142,6 +143,21 @@ AudioMixerEffectController:
   m_SendTarget: {fileID: 0}
   m_EnableWetMix: 0
   m_Bypass: 0
+--- !u!245 &3867200341498898880
+AudioMixerSnapshotController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: FadedBackdrop
+  m_AudioMixer: {fileID: 24100000}
+  m_SnapshotID: 81aa14a89ca89434fae8e0d957356d39
+  m_FloatValues:
+    19686605105a748d6bb8dd20be9f929b: 0.44032478
+    404b19e59229d4277aee9260179cf8a4: 6.2251854
+    e8826d882c27a450aaa9b6831b9f33ac: -19.928478
+    61df22c994545496fbd9ad91b0850acf: 5.02454
+  m_TransitionOverrides: {}
 --- !u!244 &4072495411548340780
 AudioMixerEffectController:
   m_ObjectHideFlags: 3
