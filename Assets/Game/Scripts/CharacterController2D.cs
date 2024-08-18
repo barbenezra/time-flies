@@ -9,10 +9,11 @@ public class CharacterController2D : MonoBehaviour
     [SerializeField] private float m_DashForce = 400f; // Amount of force added when the player dashes.
     [SerializeField] private float m_dashCooldown = 0.5f;
 
-    [Range(0, 1)] [SerializeField]
+    [Range(0, 1)]
+    [SerializeField]
     private float m_CrouchSpeed = .36f; // Amount of maxSpeed applied to crouching movement. 1 = 100%
 
-    [Range(0, .3f)] [SerializeField] private float m_MovementSmoothing = .05f; // How much to smooth out the movement
+    [Range(0, .3f)][SerializeField] private float m_MovementSmoothing = .05f; // How much to smooth out the movement
     [SerializeField] private bool m_AirControl = false; // Whether or not a player can steer while jumping;
     [SerializeField] private LayerMask m_WhatIsGround; // A mask determining what is ground to the character
     [SerializeField] private Transform m_GroundCheck; // A position marking where to check if the player is grounded.
@@ -28,10 +29,11 @@ public class CharacterController2D : MonoBehaviour
     private Vector3 m_Velocity = Vector3.zero;
     private float k_BottomlessDeathHeight = -50f;
 
-    [Header("Events")] [Space] public UnityEvent OnDashEvent = new UnityEvent();
+    [Header("Events")][Space] public UnityEvent OnDashEvent = new UnityEvent();
     public UnityEvent OnLandEvent = new UnityEvent();
     public UnityEvent<bool> OnCrouchEvent = new UnityEvent<bool>();
     public UnityEvent OnDeathEvent = new UnityEvent();
+    public UnityEvent OnFinishEvent = new UnityEvent();
     private bool m_wasCrouching = false;
 
     [Header("Time Speed Up")] public float DashTimeSpeedUp = 300f;
@@ -193,6 +195,9 @@ public class CharacterController2D : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D trigger)
     {
-        if (trigger.gameObject.name == "Death") OnDeathEvent.Invoke();
+        if (trigger.gameObject.tag == "Death")
+        {
+            OnFinishEvent.Invoke();
+        }
     }
 }
