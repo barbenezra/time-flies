@@ -62,7 +62,7 @@ MonoBehaviour:
       type: 2}
     FadeBackdrop: 0
     PlayInOrder: 0
-  NumberOfSources: 1
+  NumberOfSources: 4
   Sounds:
   - Name: Jump
     Clip: {fileID: 8300000, guid: 7d5b6dabcb9754c2bbe6a2ee63d53048, type: 3}
@@ -89,5 +89,10 @@ MonoBehaviour:
     Clip: {fileID: 8300000, guid: 0788c13ec558140b48f86aa4e86273b2, type: 3}
     Group: {fileID: -3210895976114468243, guid: 9854a1ee621db40caa3c21758272d3f2,
       type: 2}
+    FadeBackdrop: 1
+    PlayInOrder: 0
+  - Name: Ticking
+    Clip: {fileID: 8300000, guid: 0cae126fdb714475e8e6030f804c8785, type: 3}
+    Group: {fileID: 6500369174016938505, guid: 9854a1ee621db40caa3c21758272d3f2, type: 2}
     FadeBackdrop: 1
     PlayInOrder: 0

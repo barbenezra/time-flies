@@ -753,6 +753,16 @@ PrefabInstance:
       propertyPath: m_JumpForce
       value: 2000
       objectReference: {fileID: 0}
+    - target: {fileID: 2854970116948882321, guid: 4b2adbb6d11502840bf0770212f6feeb,
+        type: 3}
+      propertyPath: DashTimeSpeedUp
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 2854970116948882321, guid: 4b2adbb6d11502840bf0770212f6feeb,
+        type: 3}
+      propertyPath: JumpTimeSpeedUp
+      value: 200
+      objectReference: {fileID: 0}
     - target: {fileID: 4199849485324226689, guid: 4b2adbb6d11502840bf0770212f6feeb,
         type: 3}
       propertyPath: runSpeed

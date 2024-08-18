@@ -50,6 +50,7 @@ namespace Game.Scripts.Managers
             DOTween
                 .To(() => DaysPerSecond, x => DaysPerSecond = x, daysPerSecond, animationDurationInSeconds)
                 .From(true);
+            SoundManager.Instance.Play("Ticking");
         }
     }
 }

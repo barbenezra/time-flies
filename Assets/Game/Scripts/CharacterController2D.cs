@@ -15,7 +15,7 @@ public class CharacterController2D : MonoBehaviour
 	[SerializeField] private Transform m_GroundCheck;							// A position marking where to check if the player is grounded.
 	[SerializeField] private Transform m_CeilingCheck;							// A position marking where to check for ceilings
 	[SerializeField] private Collider2D m_CrouchDisableCollider;				// A collider that will be disabled when crouching
-
+	
 	private float dashTime = 0;
 	const float k_GroundedRadius = .5f; // Radius of the overlap circle to determine if grounded
 	private bool m_Grounded;            // Whether or not the player is grounded.
@@ -31,6 +31,10 @@ public class CharacterController2D : MonoBehaviour
 	public UnityEvent<bool> OnCrouchEvent = new UnityEvent<bool>();
 	private bool m_wasCrouching = false;
 
+	[Header("Time Speed Up")]
+	public float DashTimeSpeedUp = 300f;
+	public float JumpTimeSpeedUp = 200f;
+	
 	private void Awake()
 	{
 		m_Rigidbody2D = GetComponent<Rigidbody2D>();
@@ -126,6 +130,7 @@ public class CharacterController2D : MonoBehaviour
 			m_Grounded = false;
 			m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
 			SoundManager.Instance.Play("Jump");
+			AgeManager.Instance.SpeedUp(JumpTimeSpeedUp, 3f);
 		}
 
 		if (dash && dashTime <= 0)
@@ -135,6 +140,7 @@ public class CharacterController2D : MonoBehaviour
 			OnDashEvent.Invoke();
 			dashTime = m_dashCooldown; 
 			SoundManager.Instance.Play("Dash");
+			AgeManager.Instance.SpeedUp(DashTimeSpeedUp, 2f);
 		}
 
 		if (dashTime >= 0)
