@@ -1,20 +1,15 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using Game.Scripts.Helpers;
 using Game.Scripts.Managers;
 using UnityEngine;
-using UnityEngine.Events;
 
 public class PlayerState : MonoBehaviour
 {
-    IState currentState = new BabyState();
+    IState currentState;
 
     [SerializeField] CharacterController2D BabyController;
     [SerializeField] CharacterController2D ChildController;
     [SerializeField] CharacterController2D AdultController;
     [SerializeField] CharacterController2D OldController;
-    
+
     private GameObject currentStateGameObject;
 
     private void OnEnable()
@@ -37,52 +32,20 @@ public class PlayerState : MonoBehaviour
             _ => new BabyState()
         };
 
-        if (newState.GetType() != currentState.GetType())
+        if (newState.GetType() != currentState?.GetType())
         {
             ChangeState(newState);
         }
     }
 
-    // private void Start()
-    // {
-    //     ChangeState(new BabyState());
-    // }
-
     void Update()
     {
-        if (currentState != null)
-        {
-            currentState.UpdateState(this);
-        }
-        
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            ChangeState(new BabyState());
-        }
-        
-        if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            ChangeState(new ChildState());
-        }
-        
-        if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            ChangeState(new AdultState());
-        }
-        
-        if (Input.GetKeyDown(KeyCode.Alpha4))
-        {
-            ChangeState(new OldState());
-        }
+        currentState?.UpdateState(this);
     }
 
     private void SetController(IState state)
     {
-        if (currentStateGameObject)
-        {
-            currentStateGameObject.SetActive(false);
-        }
-        
+        currentStateGameObject?.SetActive(false);
         CharacterController2D controller = GetController(state);
         currentStateGameObject = controller.gameObject;
         currentStateGameObject.SetActive(true);
@@ -92,7 +55,7 @@ public class PlayerState : MonoBehaviour
     private CharacterController2D GetController(IState state)
     {
         if (state == null) return null;
-        
+
         if (state.GetType() == typeof(BabyState)) return BabyController;
         if (state.GetType() == typeof(ChildState)) return ChildController;
         if (state.GetType() == typeof(AdultState)) return AdultController;
