@@ -23,12 +23,14 @@ public class CharacterController2D : MonoBehaviour
 	private Rigidbody2D m_Rigidbody2D;
 	private bool m_FacingRight = true;  // For determining which way the player is currently facing.
 	private Vector3 m_Velocity = Vector3.zero;
+	private float k_BottomlessDeathHeight = -50f;
 
 	[Header("Events")]
 	[Space]
 	public UnityEvent OnDashEvent = new UnityEvent();
 	public UnityEvent OnLandEvent = new UnityEvent();
 	public UnityEvent<bool> OnCrouchEvent = new UnityEvent<bool>();
+	public UnityEvent OnDeathEvent = new UnityEvent();
 	private bool m_wasCrouching = false;
 
 	[Header("Time Speed Up")]
@@ -57,6 +59,8 @@ public class CharacterController2D : MonoBehaviour
 					OnLandEvent.Invoke();
 			}
 		}
+		
+		if (transform.position.y < k_BottomlessDeathHeight) OnDeathEvent.Invoke();
 	}
 
 	public void Move(float move, bool crouch, bool jump, bool dash)
@@ -167,5 +171,10 @@ public class CharacterController2D : MonoBehaviour
 		m_DashForce = controller.m_DashForce;
 		m_JumpForce = controller.m_JumpForce;
 		m_RunSpeed = controller.m_RunSpeed;
+	}
+	
+	void OnTriggerEnter2D(Collider2D trigger)
+	{
+		if (trigger.gameObject.name == "Death") OnDeathEvent.Invoke();
 	}
 }

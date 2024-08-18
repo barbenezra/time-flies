@@ -484,6 +484,21 @@ PrefabInstance:
       propertyPath: m_JumpForce
       value: 2000
       objectReference: {fileID: 0}
+    - target: {fileID: 2854970116948882321, guid: 4b2adbb6d11502840bf0770212f6feeb,
+        type: 3}
+      propertyPath: OnDeathEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2854970116948882321, guid: 4b2adbb6d11502840bf0770212f6feeb,
+        type: 3}
+      propertyPath: OnDeathEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2854970116948882321, guid: 4b2adbb6d11502840bf0770212f6feeb,
+        type: 3}
+      propertyPath: OnDeathEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4199849485324226689, guid: 4b2adbb6d11502840bf0770212f6feeb,
         type: 3}
       propertyPath: runSpeed

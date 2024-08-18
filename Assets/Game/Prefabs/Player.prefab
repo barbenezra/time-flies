@@ -107,7 +107,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1295dd66fa9942e6b71cca865345b5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_runSpeed: 40
+  m_RunSpeed: 40
   m_JumpForce: 1000
   m_DashForce: 150
   m_dashCooldown: 1
@@ -129,6 +129,11 @@ MonoBehaviour:
   OnCrouchEvent:
     m_PersistentCalls:
       m_Calls: []
+  OnDeathEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  DashTimeSpeedUp: 300
+  JumpTimeSpeedUp: 200
 --- !u!1001 &2871807397150290584
 PrefabInstance:
   m_ObjectHideFlags: 0
