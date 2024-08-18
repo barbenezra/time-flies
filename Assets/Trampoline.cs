@@ -4,23 +4,11 @@ using UnityEngine;
 
 public class Trampoline : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    [SerializeField] float jumpBoost = 100f;
 
     private void OnCollisionEnter2D(Collision2D collision)
-    { 
-        {
-
-        }
+    {
+        collision.rigidbody.velocity = new Vector2(collision.rigidbody.velocity.x, jumpBoost);
     }
 
 }
