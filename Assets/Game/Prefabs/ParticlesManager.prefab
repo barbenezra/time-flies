@@ -53,5 +53,19 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  PointParticleSystemConfigurations: []
+  PointParticleSystemConfigurations:
+  - Name: Dash
+    Prefab: {fileID: 7225923994139377564, guid: 0f1177d56281e4f20ba12022ad3f7e4c,
+      type: 3}
+    SortingLayer: Default
+    Layer: 8
+    SortingOrder: 0
+    InstanceCount: 1
+  - Name: Walk
+    Prefab: {fileID: 3900160210252508081, guid: f21b2cb77ff3f49f6b683f9192e97146,
+      type: 3}
+    SortingLayer: Default
+    Layer: 8
+    SortingOrder: 0
+    InstanceCount: 1
   HaloParticleSystemConfigurations: []

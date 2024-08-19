@@ -65,7 +65,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.014641285, y: 0.02928257}
-  m_Size: {x: 3.5746708, y: 6.856515}
+  m_Size: {x: 3.5746708, y: 7.03}
   m_Direction: 0
 --- !u!1 &6186724949890312803
 GameObject:
@@ -78,7 +78,7 @@ GameObject:
   - component: {fileID: 6452915632933200976}
   - component: {fileID: 5373870472035494075}
   m_Layer: 0
-  m_Name: CeilingCheck
+  m_Name: CeilingCheck2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -155,7 +155,7 @@ GameObject:
   - component: {fileID: 3181013206399187111}
   - component: {fileID: 5465494588987273593}
   m_Layer: 0
-  m_Name: GroundCheck
+  m_Name: GroundCheck2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -370,7 +370,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8938959068288671978}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b1295dd66fa9942e6b71cca865345b5d, type: 3}
   m_Name: 
@@ -397,3 +397,8 @@ MonoBehaviour:
   OnCrouchEvent:
     m_PersistentCalls:
       m_Calls: []
+  OnDeathEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  DashTimeSpeedUp: 300
+  JumpTimeSpeedUp: 200

@@ -248,7 +248,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.060528755, y: 0.04842305}
-  m_Size: {x: 3.6232753, y: 5.939133}
+  m_Size: {x: 3.6232753, y: 6.25}
   m_Direction: 0
 --- !u!1 &7226970516479425013
 GameObject:
@@ -293,7 +293,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7226970516479425013}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b1295dd66fa9942e6b71cca865345b5d, type: 3}
   m_Name: 
@@ -320,6 +320,11 @@ MonoBehaviour:
   OnCrouchEvent:
     m_PersistentCalls:
       m_Calls: []
+  OnDeathEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  DashTimeSpeedUp: 300
+  JumpTimeSpeedUp: 200
 --- !u!1 &7547597843431805907
 GameObject:
   m_ObjectHideFlags: 0

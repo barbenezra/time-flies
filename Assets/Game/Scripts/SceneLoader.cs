@@ -7,13 +7,6 @@ namespace Game.Scripts
     using UnityEngine;
     using UnityEngine.SceneManagement;
 
-    public enum SceneEnum
-    {
-        MainMenu,
-        Loading,
-        Level1
-    }
-
     public class SceneLoader : Singleton<SceneLoader>, IDestroyable
     {
         protected SceneLoader()
@@ -21,7 +14,7 @@ namespace Game.Scripts
         }
 
         public bool ShouldDestroyOnLoad() => false;
-        
+
         public void OnSceneChanged(Scene previousScene, Scene nextScene)
         {
         }
@@ -32,7 +25,7 @@ namespace Game.Scripts
 
         public event Action OnLoaderCallback;
 
-        public void Load(SceneEnum scene)
+        public void Load(string scene)
         {
             OnLoaderCallback = () =>
             {
@@ -40,14 +33,14 @@ namespace Game.Scripts
                 loadingGameObject.AddComponent<LoadingMonoBehaviour>().StartCoroutine(LoadSceneAsync(scene));
             };
 
-            SceneManager.LoadScene(SceneEnum.Loading.ToString());
+            SceneManager.LoadScene("Loading");
         }
 
-        private IEnumerator LoadSceneAsync(SceneEnum scene)
+        private IEnumerator LoadSceneAsync(string scene)
         {
             yield return null;
 
-            loadingAsyncOperation = SceneManager.LoadSceneAsync(scene.ToString());
+            loadingAsyncOperation = SceneManager.LoadSceneAsync(scene);
 
             while (!loadingAsyncOperation.isDone)
             {
