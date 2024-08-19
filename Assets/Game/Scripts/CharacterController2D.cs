@@ -19,6 +19,7 @@ public class CharacterController2D : MonoBehaviour
     [SerializeField] private Transform m_GroundCheck; // A position marking where to check if the player is grounded.
     [SerializeField] private Transform m_CeilingCheck; // A position marking where to check for ceilings
     [SerializeField] private Collider2D m_CrouchDisableCollider; // A collider that will be disabled when crouching
+    [SerializeField] private Animator m_animator; // Get the correct animator to have correct animations playing
 
     private float dashTime = 0;
     const float k_GroundedRadius = .5f; // Radius of the overlap circle to determine if grounded
@@ -42,6 +43,9 @@ public class CharacterController2D : MonoBehaviour
     private void Awake()
     {
         m_Rigidbody2D = GetComponent<Rigidbody2D>();
+        
+            m_animator = GetComponentInChildren<Animator>();
+        
     }
 
     private void FixedUpdate()
@@ -68,6 +72,8 @@ public class CharacterController2D : MonoBehaviour
     public void Move(float move, bool crouch, bool jump, bool dash)
     {
         move *= m_RunSpeed;
+        bool isRunning = Mathf.Abs(move) > 0.01f;
+        m_animator.SetBool("isRunning", isRunning);
 
         // If crouching, check to see if the character can stand up
         if (!crouch)
@@ -87,6 +93,7 @@ public class CharacterController2D : MonoBehaviour
                 () => !m_Grounded || Mathf.Abs(m_Rigidbody2D.velocity.y) < Mathf.Epsilon,
                 () => m_FacingRight ? Quaternion.Euler(-90, 0, 0) : Quaternion.Euler(-90, 180, 0)
             );
+   
         }
 
         //only control the player if grounded or airControl is turned on
@@ -191,6 +198,7 @@ public class CharacterController2D : MonoBehaviour
         m_DashForce = controller.m_DashForce;
         m_JumpForce = controller.m_JumpForce;
         m_RunSpeed = controller.m_RunSpeed;
+        m_animator = controller.m_animator;
     }
 
     void OnTriggerEnter2D(Collider2D trigger)

@@ -95,7 +95,7 @@ Animator:
   m_GameObject: {fileID: 16005509169755328}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: c7cde5878349b114c922ba16bc8cc18a, type: 2}
+  m_Controller: {fileID: 9100000, guid: 0e3d5126fb62a6145aed3b592cdc51c6, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -167,6 +167,7 @@ MonoBehaviour:
   m_GroundCheck: {fileID: 4404804255166333290}
   m_CeilingCheck: {fileID: 6363280874821367248}
   m_CrouchDisableCollider: {fileID: 0}
+  animator: {fileID: 5223897474028620937}
   OnDashEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -177,6 +178,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   OnDeathEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnFinishEvent:
     m_PersistentCalls:
       m_Calls: []
   DashTimeSpeedUp: 300

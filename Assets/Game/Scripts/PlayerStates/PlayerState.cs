@@ -56,6 +56,8 @@ public class PlayerState : MonoBehaviour
         currentCharacterController = GetController(state);
         currentCharacterController.gameObject.SetActive(true);
 
+        
+
         characterController.SetController(currentCharacterController);
     }
 

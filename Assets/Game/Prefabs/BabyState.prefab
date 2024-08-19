@@ -138,6 +138,7 @@ MonoBehaviour:
   m_GroundCheck: {fileID: 2942701388581247171}
   m_CeilingCheck: {fileID: 2520656396116089866}
   m_CrouchDisableCollider: {fileID: 0}
+  animator: {fileID: 4203165383980232575}
   OnDashEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -148,6 +149,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   OnDeathEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnFinishEvent:
     m_PersistentCalls:
       m_Calls: []
   DashTimeSpeedUp: 300
